@@ -70,7 +70,7 @@ public class BizClaimVoucherAction extends ActionSupport {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
 
-        /*以下是沙箱支付宝  */
+        /*以下是沙箱支付宝  原先没问题 后来视乎有点问题了，建议注释以下代码在财务审核 */
 
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
