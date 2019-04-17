@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+    <package name="sysEmployee" namespace="/" extends="default">
+        <!--登录-->
+        <action name="*SysEmployeeAction" class="action.SysEmployeeAction" method="{1}">
+            <result name="success" type="redirectAction">query</result>
+            <!-- 添加defaultStack保证不执行拦截器 -->
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+
+        <!--退出-->
+        <action name="emp_logout" class="action.SysEmployeeAction" method="logout">
+            <result name="login">/login.jsp</result>
+        </action>
+
+    </package>
+
+</struts>
